@@ -4,6 +4,8 @@
   const data = window.PORTFOLIO_DATA;
   if (!data) return;
 
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const esc = (value = "") => String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -132,7 +134,6 @@
 
   // Rotating hero focus
   const rotatingFocus = document.getElementById("rotating-focus");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (rotatingFocus && data.rotatingFocus.length > 1 && !reducedMotion) {
     let focusIndex = 0;
     setInterval(() => {
