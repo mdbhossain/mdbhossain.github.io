@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Md Billal Hossain</title>
+</head>
+<body>
+
+    <h1>Md Billal Hossain</h1>
+
+    <p>Welcome to my personal academic and research portfolio.</p>
+
+    <h2>About Me</h2>
+    <p>
+        I am a researcher and educator with interests in machine learning,
+        wearable computing, signal processing, and energy expenditure estimation.
+    </p>
+
+    <h2>Research</h2>
+    <p>My research focuses on wearable sensing and machine learning for health applications.</p>
+
+    <h2>Contact</h2>
+    <p>Email: Your email address</p>
+
+</body>
+</html>
