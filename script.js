@@ -4,6 +4,7 @@
   const data = window.PORTFOLIO_DATA;
   if (!data) return;
 
+  // Define this before any rendering function can call setupRevealObservers().
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const esc = (value = "") => String(value)
