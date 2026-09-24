@@ -221,10 +221,10 @@ img { max-width: 100%; }
 .social-row a { color: var(--ink); font-weight: 700; }
 .social-row a:hover { color: var(--accent); }
 
-.hero-visual { position: relative; min-height: 560px; }
+.hero-visual { position: relative; min-height: 560px; align-self: start; margin-top: 56px; }
 .portrait-shell {
   position: absolute;
-  top: -24px;
+  top: 0;
   right: 22px;
   width: 242px;
   aspect-ratio: 4 / 5;
@@ -517,7 +517,7 @@ img { max-width: 100%; }
   .nav-actions { display: none; }
   .hero { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { min-height: 560px; max-width: 680px; width: 100%; margin-inline: auto; }
+  .hero-visual { margin-top: 30px; min-height: 560px; max-width: 680px; width: 100%; margin-inline: auto; }
   .expertise-strip { grid-template-columns: repeat(3, 1fr); }
   .expertise-strip span:nth-child(3) { border-right: 0; }
   .expertise-strip span:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
