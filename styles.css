@@ -203,8 +203,8 @@ img { max-width: 100%; }
 .hero h1 {
   margin: 20px 0 24px;
   max-width: 780px;
-  font: 800 clamp(3.1rem, 6vw, 6.7rem) / .98 "Manrope", "Inter", sans-serif;
-  letter-spacing: -.065em;
+  font: 800 clamp(1.55rem, 3vw, 3.35rem) / 1.1 "Manrope", "Inter", sans-serif;
+  letter-spacing: -.04em;
 }
 .gradient-text {
   display: inline-block;
@@ -532,7 +532,7 @@ img { max-width: 100%; }
   .site-header.is-scrolled { background: color-mix(in srgb, var(--bg) 94%, transparent); }
   .brand-text { display: none; }
   .hero { padding-top: 125px; }
-  .hero h1 { font-size: clamp(2.8rem, 14vw, 4.8rem); }
+  .hero h1 { font-size: clamp(1.4rem, 7vw, 2.4rem); }
   .hero-lead { font-size: 1rem; }
   .hero-visual { min-height: 520px; }
   .portrait-shell { width: 170px; right: 12px; top: -10px; }
