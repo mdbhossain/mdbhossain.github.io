@@ -11,15 +11,18 @@
 */
 
 window.PORTFOLIO_DATA = {
-  profileImage: "",
+  profileImage: "assets/headshot.jpg",
 
   // Keywords shown in the glowing "Research Interests" panel on the home section.
   focusKeywords: [
-    "wearable health",
-    "multimodal sensing",
-    "human-centered AI",
-    "computer vision",
-    "energy expenditure estimation"
+    "Wearable Health",
+    "Multimodal Sensing",
+    "Computer Vision",
+    "Machine Learning",
+    "Deep Learning",
+    "Signal Processing",
+    "Imputation",
+    "Embedded & Edge AI"
   ],
 
   education: [
@@ -37,7 +40,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       degree: "B.Sc. in Electronics & Communication Engineering",
-      institution: "Khulna University of Engineering & Technology (KUET)",
+      institution: "Khulna University of Engineering & Technology",
       period: "2008 — 2012",
       detail: "Khulna, Bangladesh"
     }

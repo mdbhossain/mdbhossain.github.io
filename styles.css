@@ -47,6 +47,7 @@ body::selection { background: rgba(47, 114, 255, .18); }
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
 img { max-width: 100%; }
+[hidden] { display: none !important; }
 
 .skip-link {
   position: fixed;
@@ -170,7 +171,7 @@ img { max-width: 100%; }
 .hero {
   position: relative;
   min-height: auto;
-  padding: 112px 0 70px;
+  padding: 112px 0 36px;
   overflow: hidden;
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--bg) 86%, transparent), var(--bg)),
@@ -215,6 +216,7 @@ img { max-width: 100%; }
   width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
   border: 4px solid var(--surface);
 }
+.profile-image { display: block; object-position: 38% 30%; }
 .portrait-placeholder {
   display: grid;
   place-content: center;
@@ -284,10 +286,10 @@ img { max-width: 100%; }
 @keyframes keyword-shift { to { background-position: -300% 0; } }
 
 .hero .education-grid { margin-top: 0; gap: 14px; }
-.hero .education-card { padding: 15px 18px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+.hero .education-card { display: flex; flex-direction: column; padding: 15px 18px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
 .hero .education-index { display: none; }
 .hero .education-card h3 { margin: 0 0 8px; font-size: .95rem; }
-.hero .education-card p { font-size: .82rem; margin: 3px 0; }
+.hero .education-card p { font-size: .82rem; margin: auto 0 0; }
 .expertise-strip {
   position: relative;
   z-index: 3;
@@ -304,6 +306,7 @@ img { max-width: 100%; }
 .expertise-strip span:last-child { border-right: 0; }
 
 .section { padding: 110px 0; }
+.section-after-hero { padding-top: 76px; }
 .section-tinted { background: var(--surface-2); }
 .section-dark { background: var(--navy); color: #eef5ff; }
 .section-dark .section-kicker { color: #79a7ff; }
