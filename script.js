@@ -29,13 +29,17 @@
 
   // Render education
   const educationGrid = document.getElementById("education-grid");
-  educationGrid.innerHTML = data.education.map((item, index) => `
+  // "Ph.D. in Electrical & Computer Engineering" -> level "Ph.D." + field "Electrical & Computer Engineering"
+  educationGrid.innerHTML = data.education.map((item, index) => {
+    const [level, ...rest] = String(item.degree).split(" in ");
+    const field = rest.join(" in ");
+    return `
     <article class="education-card reveal" style="--delay:${index * 70}ms">
-      <span class="education-index">0${index + 1}</span>
-      <h3>${esc(item.degree)}</h3>
+      ${field ? `<span class="education-level">${esc(level)}</span>` : ""}
+      <h3>${esc(field || level)}</h3>
       <p class="education-institution">${esc(item.institution)}</p>
-    </article>
-  `).join("");
+    </article>`;
+  }).join("");
 
   // Render research areas
   const researchGrid = document.getElementById("research-grid");

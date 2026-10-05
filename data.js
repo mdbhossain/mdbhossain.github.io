@@ -108,7 +108,7 @@ window.PORTFOLIO_DATA = {
 
   experience: [
     {
-      role: "Record Instructor",
+      role: "Instructor of Record",
       organization: "Department of Electrical and Computer Engineering, The University of Alabama",
       location: "Tuscaloosa, Alabama",
       period: "May 2025 — Present",
