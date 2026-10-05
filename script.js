@@ -34,8 +34,6 @@
       <span class="education-index">0${index + 1}</span>
       <h3>${esc(item.degree)}</h3>
       <p class="education-institution">${esc(item.institution)}</p>
-      <p class="education-period">${esc(item.period)}</p>
-      <p>${esc(item.detail)}</p>
     </article>
   `).join("");
 
