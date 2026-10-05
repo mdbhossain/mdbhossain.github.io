@@ -133,18 +133,12 @@
     </div>
   `).join("");
 
-  // Rotating hero focus
-  const rotatingFocus = document.getElementById("rotating-focus");
-  if (rotatingFocus && data.rotatingFocus.length > 1 && !reducedMotion) {
-    let focusIndex = 0;
-    setInterval(() => {
-      rotatingFocus.classList.add("is-changing");
-      setTimeout(() => {
-        focusIndex = (focusIndex + 1) % data.rotatingFocus.length;
-        rotatingFocus.textContent = data.rotatingFocus[focusIndex];
-        rotatingFocus.classList.remove("is-changing");
-      }, 260);
-    }, 3200);
+  // Hero focus keywords (static, glowing chips)
+  const focusKeywords = document.getElementById("focus-keywords");
+  if (focusKeywords) {
+    focusKeywords.innerHTML = (data.focusKeywords || []).map((item, index) => `
+      <li style="--i:${index}"><span>${esc(item)}</span></li>
+    `).join("");
   }
 
   // Navigation / mobile menu

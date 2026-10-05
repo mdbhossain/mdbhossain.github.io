@@ -13,7 +13,8 @@
 window.PORTFOLIO_DATA = {
   profileImage: "",
 
-  rotatingFocus: [
+  // Keywords shown in the glowing "Research Interests" panel on the home section.
+  focusKeywords: [
     "wearable health",
     "multimodal sensing",
     "human-centered AI",

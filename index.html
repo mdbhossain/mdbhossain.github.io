@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1220" />
+  <meta name="theme-color" content="#f8f7f3" />
   <meta name="description" content="Academic portfolio of Md Billal Hossain — researcher and educator working in machine learning, wearable sensing, computer vision, signal processing, and mHealth." />
   <meta name="author" content="Md Billal Hossain" />
   <meta property="og:title" content="Md Billal Hossain | Researcher & Educator" />
@@ -15,6 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <title>Md Billal Hossain | Researcher & Educator</title>
 
@@ -26,6 +28,7 @@
     "url": "https://mdbhossain.github.io/",
     "sameAs": [
       "https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ",
+      "https://orcid.org/0000-0002-0155-748X",
       "https://www.linkedin.com/in/hossain-md-billal/",
       "https://github.com/mdbhossain"
     ],
@@ -84,25 +87,7 @@
       <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
       <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
       <div class="hero-grid container">
-        <div class="hero-copy reveal">
-          <h1>
-            Building intelligent systems for
-            <span class="gradient-text" id="rotating-focus">wearable health</span>
-          </h1>
-          <div class="hero-cta">
-            <a class="button button-primary" href="#research">Explore my work <span aria-hidden="true">→</span></a>
-            <a class="button button-secondary" href="#publications">Selected publications</a>
-          </div>
-          <div class="social-row" aria-label="Professional profiles">
-            <a href="https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">Scholar</a>
-            <span>·</span>
-            <a href="https://www.linkedin.com/in/hossain-md-billal/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-            <span>·</span>
-            <a href="https://github.com/mdbhossain" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-          </div>
-        </div>
-
-        <aside class="hero-visual reveal reveal-delay" aria-label="Research focus visualization">
+        <aside class="profile-card reveal" aria-label="Profile">
           <div class="portrait-shell">
             <div class="portrait-placeholder" id="portrait-placeholder" aria-label="Profile image placeholder">
               <span>MBH</span>
@@ -110,14 +95,45 @@
             </div>
             <img id="profile-image" class="profile-image" alt="Md Billal Hossain" hidden />
           </div>
-
-          <div class="constellation">
-            <p class="hero-lead">
-              I am Md Billal Hossain, a researcher and educator working at the intersection of machine learning, wearable sensing,
-              computer vision, signal processing, and embedded intelligence—with a focus on practical health and human-centered applications.
-            </p>
+          <h1 class="profile-name">Md Billal Hossain</h1>
+          <p class="profile-pronouns">(he/him)</p>
+          <p class="profile-role">Record Instructor</p>
+          <p class="profile-org">The University of Alabama</p>
+          <div class="social-row" aria-label="Professional profiles">
+            <a class="social-link" href="https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i></a>
+            <a class="social-link" href="https://orcid.org/0000-0002-0155-748X" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a>
+            <a class="social-link" href="https://www.linkedin.com/in/hossain-md-billal/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a class="social-link" href="https://github.com/mdbhossain" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
           </div>
         </aside>
+
+        <div class="hero-main reveal reveal-delay">
+          <div class="hero-top">
+            <section class="hero-block" aria-labelledby="summary-title">
+              <h2 class="hero-block-title" id="summary-title">
+                <span class="hero-block-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2v10h14V7H5Zm2 2h4v4H7V9Zm6 0h4v1.6h-4V9Zm0 2.9h4v1.6h-4v-1.6ZM7 14.4h10V16H7v-1.6Z"/></svg></span>
+                Professional Summary
+              </h2>
+              <p class="hero-summary">
+                I am Md Billal Hossain, a researcher and educator working at the intersection of machine learning, wearable sensing,
+                computer vision, signal processing, and embedded intelligence—with a focus on practical health and human-centered applications.
+              </p>
+            </section>
+
+            <aside class="keyword-panel" aria-labelledby="keyword-title">
+              <div class="micro-label" id="keyword-title">Research Interests</div>
+              <ul class="keyword-list" id="focus-keywords"></ul>
+            </aside>
+          </div>
+
+          <section class="hero-block" aria-labelledby="education-title">
+            <h2 class="hero-block-title" id="education-title">
+              <span class="hero-block-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 8-4v6h2V9L12 4Z"/><path d="M6 12.6V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-3.4l-6 3-6-3Z"/></svg></span>
+              Education
+            </h2>
+            <div class="education-grid" id="education-grid"></div>
+          </section>
+        </div>
       </div>
 
       <div class="expertise-strip container reveal" aria-label="Core expertise">
@@ -161,7 +177,6 @@
         </div>
       </div>
 
-      <div class="container education-grid reveal" id="education-grid" aria-label="Education"></div>
     </section>
 
     <section class="section section-tinted" id="research">
