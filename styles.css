@@ -316,7 +316,14 @@ img { max-width: 100%; }
 .expertise-strip span:last-child { border-right: 0; }
 
 .section { padding: 110px 0; }
-.section-after-hero { padding-top: 76px; }
+.section-after-hero { padding-top: 44px; }
+/* About uses the same two-column grid as the hero: 290px profile column + 48px gap + content column */
+.section-grid.section-grid-about { grid-template-columns: 290px minmax(0, 1fr); gap: 48px; }
+.section-grid-about .section-heading { margin-bottom: 0; }
+.section-grid-about .section-heading h2 { margin: 0; font-size: clamp(1.6rem, 2.3vw, 2rem); line-height: 1.15; letter-spacing: -.03em; }
+.section-grid-about .about-copy p { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.7; text-align: justify; hyphens: auto; }
+.section-grid-about .about-copy p:last-child { margin-bottom: 0; }
+.section-grid-about .about-copy .lead-copy { font-size: 1.08rem; }
 .section-tinted { background: var(--surface-2); }
 .section-dark { background: var(--navy); color: #eef5ff; }
 .section-dark .section-kicker { color: #79a7ff; }
@@ -530,6 +537,7 @@ img { max-width: 100%; }
   .expertise-strip span:nth-child(3) { border-right: 0; }
   .expertise-strip span:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
   .section-grid, .teaching-layout { grid-template-columns: 1fr; gap: 34px; }
+  .section-grid.section-grid-about { grid-template-columns: 1fr; gap: 18px; }
   .education-grid, .research-grid { grid-template-columns: repeat(2, 1fr); }
   .service-skill-grid { grid-template-columns: 1fr; }
   .contact-shell { grid-template-columns: 1fr; gap: 32px; }
@@ -549,6 +557,9 @@ img { max-width: 100%; }
   .expertise-strip span:nth-child(2n) { border-right: 0; }
   .expertise-strip span:nth-last-child(-n+2) { border-bottom: 0; }
   .section { padding: 78px 0; }
+  .section.section-after-hero { padding-top: 40px; }
+  /* Justified text leaves large gaps on narrow screens, so use left alignment on phones */
+  .hero-summary, .section-grid-about .about-copy p { text-align: left; }
   .section-heading-row { align-items: start; flex-direction: column; }
   .affiliation-row, .education-grid, .research-grid, .projects-grid { grid-template-columns: 1fr; }
   .project-panel { padding: 24px 18px; }
