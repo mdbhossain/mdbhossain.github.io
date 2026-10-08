@@ -316,7 +316,7 @@ img { max-width: 100%; }
 .expertise-strip span:last-child { border-right: 0; }
 
 .section { padding: 110px 0; }
-.section-after-hero { padding-top: 44px; }
+.section-after-hero { padding: 72px 0; }
 /* About uses the same two-column grid as the hero: 290px profile column + 48px gap + content column */
 .section-grid.section-grid-about { grid-template-columns: 290px minmax(0, 1fr); gap: 48px; }
 .section-grid-about .section-heading { margin-bottom: 0; }
