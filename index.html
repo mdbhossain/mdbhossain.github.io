@@ -147,13 +147,25 @@
 
         <div class="about-copy reveal">
           <p class="lead-copy">
-            My work combines sensing, machine learning, and computing to extract meaningful information from real-world human behavior.
-            I am particularly interested in wearable systems, multimodal learning, physical activity and energy expenditure estimation,
-            egocentric vision, and deployable AI for health applications.
+            I'm interested in how wearable sensors can be used to assess health and behavior in everyday life, both for general wellbeing
+            and in healthcare settings. That covers a lot of ground, and I like working across all of it: designing and testing sensor systems,
+            processing the data they produce, building the models that detect what matters, and getting those models to work on real problems
+            outside the lab.
           </p>
           <p>
-            Alongside research, I value teaching, mentoring, and the translation of complex technical ideas into structured, practical learning experiences.
-            My academic background spans electrical and computer engineering, intelligent networks, image and signal processing, and embedded systems.
+            Right now I'm working on estimating total daily energy expenditure in free-living conditions with a head-worn device that captures
+            both motion sensor data and egocentric images. There are two main challenges. One is building energy expenditure models that use
+            sensor and image data together. The other is missing data: in daily life the camera gets blocked, the sensor drops out, or the device
+            isn't worn, so a large part of my work is developing imputation models to fill those gaps.
+          </p>
+          <p>
+            Before this, I used the Screen Time Tracker, a wearable camera and accelerometer, to study how screen use affects physical activity
+            in preschool children in their normal daily routines. A deep learning model detected screens in the children's egocentric images,
+            and the results showed that more frequent and longer screen engagement went with lower activity intensity. I also benchmarked
+            state-of-the-art object detection models for recognizing food and beverages in free-living egocentric images, and did an early
+            investigation of head-worn sensors for energy expenditure, training a CNN to recognize physical activity and estimate energy
+            expenditure from an eyeglass-mounted accelerometer. Along the way I contributed to work on detecting screen use during meals and
+            on a framework for just-in-time interventions targeting eating behavior.
           </p>
 
           <div class="affiliation-row">
