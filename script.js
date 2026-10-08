@@ -43,7 +43,7 @@
 
   // Render research areas
   const researchGrid = document.getElementById("research-grid");
-  researchGrid.innerHTML = data.researchAreas.map((item) => `
+  if (researchGrid) researchGrid.innerHTML = data.researchAreas.map((item) => `
     <article class="research-card reveal">
       <span class="research-number">${esc(item.number)}</span>
       <h3>${esc(item.title)}</h3>
@@ -53,7 +53,7 @@
 
   // Render projects
   const projectsGrid = document.getElementById("projects-grid");
-  projectsGrid.innerHTML = data.projects.map((item) => `
+  if (projectsGrid) projectsGrid.innerHTML = data.projects.map((item) => `
     <article class="project-card">
       <div class="project-meta"><span>${esc(item.status)}</span></div>
       <h4>${esc(item.title)}</h4>
