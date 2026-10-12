@@ -84,19 +84,21 @@
 
   const experienceTimeline = document.getElementById("experience-timeline");
   const totals = { teaching: 0, research: 0 };
-  let previousInstitution = "";
-  experienceTimeline.innerHTML = data.experience.map((item) => {
+  // Group consecutive roles at the same institution into one card
+  const experienceGroups = [];
+  data.experience.forEach((item) => {
+    const last = experienceGroups[experienceGroups.length - 1];
+    if (last && last.institution === item.institution) last.items.push(item);
+    else experienceGroups.push({ institution: item.institution, place: item.place, items: [item] });
+  });
+  const renderRole = (item) => {
     const kind = item.type === "teaching" ? "teaching" : "research";
     const start = parseYM(item.start), end = parseYM(item.end);
     const months = monthsBetween(start, end);
     totals[kind] += months;
-    const header = item.institution !== previousInstitution
-      ? `<div class="timeline-inst reveal"><strong>${esc(item.institution)}</strong><span>${esc(item.place || "")}</span></div>`
-      : "";
-    previousInstitution = item.institution;
     const courses = (item.courses || []).map(c => `<span>${esc(c)}</span>`).join("");
-    return `${header}
-    <article class="timeline-item timeline-${kind} reveal">
+    return `
+    <article class="timeline-item timeline-${kind}">
       <div class="timeline-marker" aria-hidden="true"></div>
       <div class="timeline-period">${formatYM(start)} – ${formatYM(end)}</div>
       <div class="timeline-content">
@@ -110,7 +112,13 @@
         </div>
       </div>
     </article>`;
-  }).join("");
+  };
+  experienceTimeline.innerHTML = experienceGroups.map(group => `
+    <div class="timeline-group reveal">
+      <div class="timeline-inst"><strong>${esc(group.institution)}</strong><span>${esc(group.place || "")}</span></div>
+      ${group.items.map(renderRole).join("")}
+    </div>
+  `).join("");
   const experienceTotals = document.getElementById("experience-totals");
   if (experienceTotals) {
     experienceTotals.innerHTML = `

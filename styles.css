@@ -391,12 +391,19 @@ img { max-width: 100%; }
 
 .timeline { position: relative; min-width: 0; }
 .timeline::before { content: ""; position: absolute; left: 155px; top: 6px; bottom: 8px; width: 1px; background: var(--line); }
-/* institution heading for a group of roles */
-.timeline-inst { margin: 0 0 10px 186px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
-.timeline-inst:not(:first-child) { margin-top: 14px; }
+/* each institution is a card; dates and dots stay on the timeline to its left */
+.timeline-group { position: relative; padding: 14px 16px 2px 0; margin-bottom: 12px; }
+.timeline-group:last-child { margin-bottom: 0; }
+.timeline-group::before {
+  content: ""; position: absolute; z-index: 0; left: 172px; right: 0; top: 0; bottom: 0;
+  border: 1px solid var(--line); border-radius: var(--radius-md);
+  background: var(--surface); box-shadow: var(--shadow-soft);
+}
+.timeline-group > * { position: relative; z-index: 1; }
+.timeline-inst { margin: 0 0 10px 190px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
 .timeline-inst strong { font-size: .98rem; }
 .timeline-inst span { color: var(--muted); font-size: .82rem; }
-.timeline-item { --type-color: var(--accent); position: relative; display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 46px; padding: 0 0 14px; }
+.timeline-item { --type-color: var(--accent); position: relative; display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 50px; padding: 0 0 14px; }
 .timeline-item.timeline-teaching { --type-color: var(--crimson); }
 .timeline-marker { position: absolute; left: 149px; top: 5px; width: 13px; height: 13px; border-radius: 50%; background: var(--bg); border: 3px solid var(--type-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--type-color) 12%, transparent); }
 .timeline-period { padding-top: 1px; color: var(--muted); font-size: .8rem; font-weight: 700; text-align: right; white-space: nowrap; }
@@ -634,8 +641,10 @@ a.news-text:hover { color: var(--accent); }
   .project-panel-heading { align-items: start; flex-direction: column; }
   .panel-note { display: none; }
   .timeline::before { left: 6px; }
-  .timeline-inst { margin-left: 30px; }
-  .timeline-item { grid-template-columns: 1fr; gap: 4px; padding-left: 30px; padding-bottom: 16px; }
+  .timeline-group { padding-right: 12px; }
+  .timeline-group::before { left: 22px; }
+  .timeline-inst { margin-left: 34px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 4px; padding-left: 34px; padding-bottom: 16px; }
   .timeline-marker { left: 0; top: 4px; }
   .timeline-period { text-align: left; }
   .timeline-content { grid-template-columns: 1fr; gap: 6px; }
