@@ -542,7 +542,7 @@ img { max-width: 100%; }
 .footer-links { display: flex; gap: 20px; color: var(--muted); font-size: .84rem; font-weight: 700; }
 .footer-links a:hover { color: var(--accent); }
 .footer-meta { grid-column: 1 / -1; padding-top: 16px; border-top: 1px solid var(--line); }
-.footer-grid .footer-links { grid-column: 1 / -1; justify-content: flex-end; }
+.site-footer .footer-meta { padding-top: 0; border-top: 0; }
 
 .back-to-top {
   position: fixed;
