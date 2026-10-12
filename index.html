@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
-  <link rel="stylesheet" href="styles.css?v=20261012" />
+  <link rel="stylesheet" href="styles.css?v=20261012c" />
   <title>Md Billal Hossain | Researcher & Educator</title>
 
   <script type="application/ld+json">
@@ -81,6 +81,15 @@
     </nav>
   </header>
 
+  <!-- News sidebar: fixed in the empty left margin on wide screens only -->
+  <aside class="news-panel news-sidebar" aria-labelledby="news-side-title">
+    <h2 class="hero-block-title" id="news-side-title">
+      <span class="hero-block-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h13a1 1 0 0 1 1 1v1h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6a3 3 0 0 1-3-3V6a1 1 0 0 1 1-1Zm1 2v9a1 1 0 0 0 1 1h10.2a2 2 0 0 1-.2-.9V7H5Zm13 2v7.1a.9.9 0 0 0 1 .9V9h-1ZM7 9h7v2H7V9Zm0 3.5h7v1.6H7v-1.6Z"/></svg></span>
+      News
+    </h2>
+    <ol class="news-list"></ol>
+  </aside>
+
   <main id="main-content">
     <section class="hero" id="home">
       <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
@@ -133,6 +142,15 @@
             </h2>
             <div class="education-grid" id="education-grid"></div>
           </section>
+
+          <!-- News (smaller screens). On wide screens the same items show in .news-sidebar instead. Edit items in data.js -->
+          <aside class="hero-block news-panel news-inline" id="news" aria-labelledby="news-title">
+            <h2 class="hero-block-title" id="news-title">
+              <span class="hero-block-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h13a1 1 0 0 1 1 1v1h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6a3 3 0 0 1-3-3V6a1 1 0 0 1 1-1Zm1 2v9a1 1 0 0 0 1 1h10.2a2 2 0 0 1-.2-.9V7H5Zm13 2v7.1a.9.9 0 0 0 1 .9V9h-1ZM7 9h7v2H7V9Zm0 3.5h7v1.6H7v-1.6Z"/></svg></span>
+              News
+            </h2>
+            <ol class="news-list"></ol>
+          </aside>
         </div>
       </div>
     </section>
@@ -269,7 +287,7 @@
 
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
 
-  <script src="data.js?v=20261012"></script>
-  <script src="script.js?v=20261012"></script>
+  <script src="data.js?v=20261012c"></script>
+  <script src="script.js?v=20261012c"></script>
 </body>
 </html>

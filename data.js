@@ -13,6 +13,33 @@
 window.PORTFOLIO_DATA = {
   profileImage: "assets/headshot.jpg",
 
+  // News: newest first. "url" is optional. Shown in the left margin on wide screens.
+  news: [
+    {
+      date: "Sep 2026",
+      text: "Paper published in IEEE Access on objectively measuring how screen use affects physical activity in preschool children.",
+      url: "https://doi.org/10.1109/ACCESS.2026.3729105"
+    },
+    {
+      date: "2026",
+      text: "Serving as a reviewer for IEEE-EMBS BHI 2026."
+    },
+    {
+      date: "2026",
+      text: "Paper at MENACOMM 2026 on a framework for just-in-time interventions targeting eating behavior.",
+      url: "https://doi.org/10.1109/MENACOMM69507.2026.11532882"
+    },
+    {
+      date: "2025",
+      text: "Paper at IEEE ICIP 2025 on detecting screen use during meals among preschool children.",
+      url: "https://doi.org/10.1109/ICIP55913.2025.11084752"
+    },
+    {
+      date: "May 2025",
+      text: "Started as Instructor of Record for Microcomputers at The University of Alabama."
+    }
+  ],
+
   // Keywords shown in the glowing "Research Interests" panel on the home section.
   focusKeywords: [
     "Wearable Health",

@@ -135,6 +135,17 @@
     </div>
   `).join("");
 
+  // News
+  const newsHtml = (data.news || []).map(item => `
+      <li>
+        <span class="news-date">${esc(item.date)}</span>
+        ${item.url
+          ? `<a class="news-text" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.text)}</a>`
+          : `<span class="news-text">${esc(item.text)}</span>`}
+      </li>
+    `).join("");
+  document.querySelectorAll(".news-list").forEach(list => { list.innerHTML = newsHtml; });
+
   // Hero focus keywords (static, glowing chips)
   const focusKeywords = document.getElementById("focus-keywords");
   if (focusKeywords) {
