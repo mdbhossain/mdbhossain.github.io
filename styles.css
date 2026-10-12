@@ -480,11 +480,12 @@ img { max-width: 100%; }
 .service-skill-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px; }
 .service-card, .skill-card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius-xl); background: var(--surface); }
 .service-card h3, .skill-card h3 { margin-top: 0; font-size: 1.3rem; }
-.service-item { display: grid; grid-template-columns: 105px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.service-item:last-child { border-bottom: 0; }
-.service-period { color: var(--accent); font-weight: 800; font-size: .75rem; }
-.service-item strong { font-size: .9rem; }
-.service-item p { margin: 4px 0 0; color: var(--muted); font-size: .83rem; }
+.service-list { min-width: 0; border-top: 1px solid var(--line); }
+.service-item { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 18px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); }
+
+.service-period { color: var(--accent); font-weight: 800; font-size: .8rem; white-space: nowrap; }
+.service-item strong { color: var(--ink); font-weight: 700; }
+.service-item p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.5; }
 .skill-group { padding: 17px 0; border-bottom: 1px solid var(--line); }
 .skill-group:first-child { padding-top: 0; }
 .skill-group:last-child { border-bottom: 0; padding-bottom: 0; }

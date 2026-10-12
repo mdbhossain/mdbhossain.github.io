@@ -171,13 +171,13 @@
   serviceList.innerHTML = data.service.map(item => `
     <div class="service-item">
       <span class="service-period">${esc(item.period)}</span>
-      <div><strong>${esc(item.title)}</strong><p>${esc(item.organization)}</p></div>
+      <p><strong>${esc(item.title)}</strong> · ${esc(item.organization)}</p>
     </div>
   `).join("");
 
   // Skills
   const skillGroups = document.getElementById("skill-groups");
-  skillGroups.innerHTML = data.skills.map(group => `
+  if (skillGroups) skillGroups.innerHTML = data.skills.map(group => `
     <div class="skill-group">
       <h4>${esc(group.group)}</h4>
       <div class="skill-pills">${group.items.map(item => `<span>${esc(item)}</span>`).join("")}</div>
