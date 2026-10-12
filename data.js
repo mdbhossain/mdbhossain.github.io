@@ -133,14 +133,21 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
-  // type: "teaching" or "research" (sets the label and dot colour). "points" are kept for reference but not shown.
+  // Experience timeline (newest first).
+  // type: "teaching" or "research" sets the label and dot colour.
+  // start / end: "YYYY-MM" (end can be "present"); dates and durations are calculated from these.
+  // Consecutive roles at the same institution are grouped under one heading.
+  // courses: shown as chips beside the role. "points" are kept for reference but not shown.
   experience: [
     {
       role: "Instructor of Record",
       type: "teaching",
-      organization: "Department of Electrical and Computer Engineering, The University of Alabama",
-      location: "Tuscaloosa, Alabama",
-      period: "May 2025 — Present",
+      unit: "Dept. of Electrical & Computer Engineering",
+      institution: "The University of Alabama",
+      place: "Tuscaloosa, AL",
+      start: "2025-05",
+      end: "present",
+      courses: ["Microcomputers"],
       points: [
         "Conduct teaching in Microcomputers.",
         "Prepare course materials, instructional activities, and assessments.",
@@ -150,9 +157,12 @@ window.PORTFOLIO_DATA = {
     {
       role: "Graduate Teaching Assistant",
       type: "teaching",
-      organization: "Department of Electrical and Computer Engineering, The University of Alabama",
-      location: "Tuscaloosa, Alabama",
-      period: "January 2025 — May 2025",
+      unit: "Dept. of Electrical & Computer Engineering",
+      institution: "The University of Alabama",
+      place: "Tuscaloosa, AL",
+      start: "2025-01",
+      end: "2025-05",
+      courses: ["Microcomputers"],
       points: [
         "Assisted the course instructor with lecture and examination-paper assessment.",
         "Supported grading and course administration.",
@@ -162,9 +172,12 @@ window.PORTFOLIO_DATA = {
     {
       role: "Graduate Research Assistant",
       type: "research",
-      organization: "Computer Laboratory of Ambient and Wearable Systems (CLAWS), The University of Alabama",
-      location: "Tuscaloosa, Alabama",
-      period: "August 2020 — January 2025",
+      unit: "Computer Laboratory of Ambient & Wearable Systems (CLAWS)",
+      institution: "The University of Alabama",
+      place: "Tuscaloosa, AL",
+      start: "2020-08",
+      end: "2025-01",
+      courses: [],
       points: [
         "Analyzed wearable-sensor and image data using signal processing, computer vision, and deep-learning methods.",
         "Reported experimental results and contributed to research documentation.",
@@ -174,9 +187,12 @@ window.PORTFOLIO_DATA = {
     {
       role: "Graduate Research Assistant",
       type: "research",
-      organization: "Cyber Physical Social System Design Lab, The University of Akron",
-      location: "Akron, Ohio",
-      period: "August 2018 — May 2019",
+      unit: "Cyber Physical Social System Design Lab",
+      institution: "The University of Akron",
+      place: "Akron, OH",
+      start: "2018-08",
+      end: "2019-05",
+      courses: [],
       points: [
         "Investigated reinforcement-learning methods for intelligent computer-network routing.",
         "Analyzed experimental results and contributed to manuscript preparation."
@@ -185,9 +201,12 @@ window.PORTFOLIO_DATA = {
     {
       role: "Lecturer",
       type: "teaching",
-      organization: "Department of Electrical and Electronic Engineering, Manarat International University",
-      location: "Dhaka, Bangladesh",
-      period: "January 2013 — August 2018",
+      unit: "Dept. of Electrical & Electronic Engineering",
+      institution: "Manarat International University",
+      place: "Dhaka, Bangladesh",
+      start: "2013-01",
+      end: "2018-08",
+      courses: ["Microprocessor & Interfacing", "Digital Signal Processing", "Computer Networks", "Digital Electronics", "Digital Communication", "Computer Programming"],
       points: [
         "Prepared and delivered lectures, developed course materials, and assessed student learning.",
         "Guided undergraduate research and design projects and provided academic mentoring.",

@@ -63,19 +63,60 @@
   `).join("");
 
   // Render experience
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const parseYM = (value) => {
+    if (!value || value === "present") {
+      const now = new Date();
+      return { y: now.getFullYear(), m: now.getMonth() + 1, present: true };
+    }
+    const [y, m] = value.split("-").map(Number);
+    return { y, m, present: false };
+  };
+  const monthsBetween = (start, end) => (end.y * 12 + end.m) - (start.y * 12 + start.m) + 1; // inclusive
+  const formatDuration = (months) => {
+    const y = Math.floor(months / 12), m = months % 12;
+    const parts = [];
+    if (y) parts.push(`${y} yr${y > 1 ? "s" : ""}`);
+    if (m) parts.push(`${m} mo${m > 1 ? "s" : ""}`);
+    return parts.join(" ") || "1 mo";
+  };
+  const formatYM = (d) => d.present ? "Present" : `${MONTHS[d.m - 1]} ${d.y}`;
+
   const experienceTimeline = document.getElementById("experience-timeline");
-  experienceTimeline.innerHTML = data.experience.map((item) => `
-    <article class="timeline-item timeline-${item.type === "teaching" ? "teaching" : "research"} reveal">
+  const totals = { teaching: 0, research: 0 };
+  let previousInstitution = "";
+  experienceTimeline.innerHTML = data.experience.map((item) => {
+    const kind = item.type === "teaching" ? "teaching" : "research";
+    const start = parseYM(item.start), end = parseYM(item.end);
+    const months = monthsBetween(start, end);
+    totals[kind] += months;
+    const header = item.institution !== previousInstitution
+      ? `<div class="timeline-inst reveal"><strong>${esc(item.institution)}</strong><span>${esc(item.place || "")}</span></div>`
+      : "";
+    previousInstitution = item.institution;
+    const courses = (item.courses || []).map(c => `<span>${esc(c)}</span>`).join("");
+    return `${header}
+    <article class="timeline-item timeline-${kind} reveal">
       <div class="timeline-marker" aria-hidden="true"></div>
-      <div class="timeline-period">${esc(item.period)}</div>
+      <div class="timeline-period">${formatYM(start)} – ${formatYM(end)}</div>
       <div class="timeline-content">
-        <span class="timeline-type">${item.type === "teaching" ? "Teaching" : "Research"}</span>
-        <h3>${esc(item.role)}</h3>
-        <p class="timeline-org">${esc(item.organization)}</p>
-        <p class="timeline-location">${esc(item.location)}</p>
+        <div class="timeline-main">
+          <h3>${esc(item.role)} <span class="timeline-type">${kind === "teaching" ? "Teaching" : "Research"}</span></h3>
+          <p class="timeline-org">${esc(item.unit)}</p>
+        </div>
+        <div class="timeline-side">
+          <span class="timeline-duration">${formatDuration(months)}</span>
+          ${courses ? `<div class="timeline-courses" aria-label="Courses">${courses}</div>` : ""}
+        </div>
       </div>
-    </article>
-  `).join("");
+    </article>`;
+  }).join("");
+  const experienceTotals = document.getElementById("experience-totals");
+  if (experienceTotals) {
+    experienceTotals.innerHTML = `
+      <span class="total-teaching"><b>Teaching</b> ${formatDuration(totals.teaching)}</span>
+      <span class="total-research"><b>Research</b> ${formatDuration(totals.research)}</span>`;
+  }
 
   // Publications
   const publicationList = document.getElementById("publication-list");
@@ -110,7 +151,7 @@
 
   // Courses
   const courseList = document.getElementById("course-list");
-  courseList.innerHTML = data.courses.map((course, index) => `
+  if (courseList) courseList.innerHTML = data.courses.map((course, index) => `
     <div class="course-item">
       <span>${String(index + 1).padStart(2, "0")}</span>
       <div><strong>${esc(course.title)}</strong><small>${esc(course.note)}</small></div>
