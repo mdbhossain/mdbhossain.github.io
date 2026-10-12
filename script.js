@@ -146,6 +146,16 @@
     `).join("");
   document.querySelectorAll(".news-list").forEach(list => { list.innerHTML = newsHtml; });
 
+  // News sidebar follows the page: level with the name at first, then held 100px from the top
+  const newsSidebar = document.querySelector(".news-sidebar");
+  if (newsSidebar) {
+    const placeNews = () => {
+      newsSidebar.style.setProperty("--news-top", `${Math.max(100, 306 - window.scrollY)}px`);
+    };
+    window.addEventListener("scroll", placeNews, { passive: true });
+    placeNews();
+  }
+
   // Hero focus keywords (static, glowing chips)
   const focusKeywords = document.getElementById("focus-keywords");
   if (focusKeywords) {
