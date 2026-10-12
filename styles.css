@@ -567,6 +567,12 @@ img { max-width: 100%; }
 .reveal-delay { --delay: 120ms; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+/* About inside the hero: heading floats top-left, text wraps beside and below it */
+.hero-about { display: flow-root; margin-top: 6px; }
+.hero-about-title { float: left; width: 230px; margin: 4px 28px 10px 0; font: 800 1.6rem/1.15 "Manrope", "Inter", sans-serif; letter-spacing: -.035em; }
+.hero-about p { margin: 0 0 14px; color: var(--muted); font-size: 1.02rem; line-height: 1.7; text-align: justify; hyphens: auto; }
+.hero-about p:last-child { margin-bottom: 0; }
+
 /* News */
 .news-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .news-list li { display: grid; gap: 2px; padding-left: 14px; border-left: 2px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }
@@ -585,8 +591,8 @@ a.news-text:hover { color: var(--accent); }
     position: fixed;
     z-index: 5;
     /* starts level with the name, then stays 100px below the top while scrolling (set in script.js) */
-    top: var(--news-top, 306px);
-    max-height: calc(100vh - var(--news-top, 306px) - 24px);
+    top: var(--news-top, 112px);
+    max-height: calc(100vh - var(--news-top, 112px) - 24px);
     overflow-y: auto;
     right: calc(50vw + var(--container) / 2 + 56px);
     width: min(400px, calc(50vw - var(--container) / 2 - 96px));
@@ -653,6 +659,8 @@ a.news-text:hover { color: var(--accent); }
   .expertise-strip span:nth-last-child(-n+2) { border-bottom: 0; }
   .section { padding: 78px 0; }
   .section.section-compact { padding: 36px 0; }
+  .hero-about-title { float: none; width: auto; margin: 0 0 12px; }
+  .hero-about p { text-align: left; }
   #about.section.section-compact { padding-top: 12px; }
   .publication-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
   #publications .publication-item { grid-template-columns: 46px minmax(0, 1fr) 36px; gap: 12px; }
