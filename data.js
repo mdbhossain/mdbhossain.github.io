@@ -235,15 +235,6 @@ window.PORTFOLIO_DATA = {
       venue: "International Conference on Informatics, Electronics & Vision (ICIEV)",
       url: "https://ieeexplore.ieee.org/abstract/document/6850856",
       featured: false
-    },
-    {
-      year: "2012",
-      type: "conference",
-      title: "Reconfigurable Encryption System: Encrypt Digital Data",
-      authors: "M. J. Hossain, M. B. Hossain, K. M. Morshed",
-      venue: "International Conference on Computer & Information Technology (ICCIT)",
-      url: "https://ieeexplore.ieee.org/abstract/document/6509805",
-      featured: false
     }
   ],
 
