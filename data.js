@@ -142,7 +142,8 @@ window.PORTFOLIO_DATA = {
   // type: "teaching" or "research" sets the label and dot colour.
   // start / end: "YYYY-MM" (end can be "present"); dates and durations are calculated from these.
   // Consecutive roles at the same institution are grouped under one heading.
-  // courses: shown as chips beside the role. "points" are kept for reference but not shown.
+  // courses: shown as chips beside the role. mentees: optional "Student mentoring" list under the role.
+  // "points" are kept for reference but not shown.
   experience: [
     {
       role: "Instructor of Record",
@@ -212,6 +213,10 @@ window.PORTFOLIO_DATA = {
       start: "2013-01",
       end: "2018-08",
       courses: ["Microprocessor & Interfacing", "Digital Signal Processing", "Computer Networks", "Digital Electronics", "Digital Communication", "Computer Programming"],
+      // Student mentoring: undergraduate final-year thesis students (name and current position)
+      mentees: [
+        { name: "Imran Khan Tutul", position: "MSEE · Power Systems Protection and Control Engineer" }
+      ],
       points: [
         "Prepared and delivered lectures, developed course materials, and assessed student learning.",
         "Guided undergraduate research and design projects and provided academic mentoring.",

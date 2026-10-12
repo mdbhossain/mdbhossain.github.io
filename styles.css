@@ -418,6 +418,11 @@ img { max-width: 100%; }
 .timeline-side { display: grid; justify-items: end; gap: 6px; max-width: 340px; text-align: right; }
 .timeline-duration { color: var(--ink); font-size: .8rem; font-weight: 700; white-space: nowrap; }
 .timeline-courses { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
+.timeline-mentees { margin-top: 10px; }
+.timeline-mentees-label { display: block; margin-bottom: 4px; color: var(--type-color); font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.timeline-mentees ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.timeline-mentees li { font-size: .86rem; line-height: 1.45; }
+.timeline-mentees li span { color: var(--muted); }
 .timeline-courses span {
   padding: 3px 9px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--type-color) 30%, var(--line));
   background: var(--surface); color: var(--ink); font-size: .72rem; font-weight: 600; line-height: 1.4; white-space: nowrap;

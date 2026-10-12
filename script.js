@@ -105,6 +105,11 @@
         <div class="timeline-main">
           <h3>${esc(item.role)} <span class="timeline-type">${kind === "teaching" ? "Teaching" : "Research"}</span></h3>
           <p class="timeline-org">${esc(item.unit)}</p>
+          ${(item.mentees || []).length ? `
+          <div class="timeline-mentees">
+            <span class="timeline-mentees-label">Student mentoring</span>
+            <ul>${item.mentees.map(m => `<li><strong>${esc(m.name)}</strong>${m.position ? ` <span>· ${esc(m.position)}</span>` : ""}</li>`).join("")}</ul>
+          </div>` : ""}
         </div>
         <div class="timeline-side">
           <span class="timeline-duration">${formatDuration(months)}</span>
