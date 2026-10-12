@@ -193,20 +193,11 @@ window.PORTFOLIO_DATA = {
   publications: [
     {
       year: "2026",
-      type: "conference",
-      title: "Communication and Machine Learning Framework for Just-in-Time Adaptive Interventions Targeting Eating Behavior",
-      authors: "E. Sazonov, D. Hossain, S. E. Fard, M. B. Hossain, M. A. McCrory, J. A. Higgins, J. G. Thomas",
-      venue: "6th Middle East and North Africa Communications Conference (MENACOMM)",
-      url: "https://doi.org/10.1109/MENACOMM69507.2026.11532882",
-      featured: true
-    },
-    {
-      year: "2025",
-      type: "conference",
-      title: "Detection of Screen Usage During Eating Events Among Preschool-Aged Children",
-      authors: "T. Ghosh, M. B. Hossain, S. Holiday, M. Cribbet, S. W. White, Y. Gan, E. Sazonov",
-      venue: "IEEE International Conference on Image Processing (ICIP)",
-      url: "https://doi.org/10.1109/ICIP55913.2025.11084752",
+      type: "journal",
+      title: "Objective Assessment of Media Screens Effect on Physical Activity in Preschool Children",
+      authors: "M. B. Hossain, S. Holiday, C. Bui, M. Cribbet, S. W. White, Y. Gan, E. Sazonov",
+      venue: "IEEE Access, vol. 14",
+      url: "https://ieeexplore.ieee.org/abstract/document/11674116",
       featured: true
     },
     {
@@ -215,7 +206,7 @@ window.PORTFOLIO_DATA = {
       title: "A CNN Model for Physical Activity Recognition and Energy Expenditure Estimation from an Eyeglass-Mounted Wearable Sensor",
       authors: "M. B. Hossain, S. R. LaMunion, S. E. Crouter, E. L. Melanson, E. Sazonov",
       venue: "Sensors, 24(10), 3046",
-      url: "https://doi.org/10.3390/s24103046",
+      url: "https://www.mdpi.com/1424-8220/24/10/3046",
       featured: true
     },
     {
@@ -224,7 +215,7 @@ window.PORTFOLIO_DATA = {
       title: "Enhancing Egocentric Insights: Comparison of Deep Learning Models for Food and Beverage Object Detection from Egocentric Images",
       authors: "M. B. Hossain, E. Sazonov",
       venue: "International Symposium on Sensing and Instrumentation in 5G and IoT Era (ISSI)",
-      url: "https://doi.org/10.1109/ISSI63632.2024.10720475",
+      url: "https://ieeexplore.ieee.org/abstract/document/10720475",
       featured: true
     },
     {
@@ -233,7 +224,7 @@ window.PORTFOLIO_DATA = {
       title: "Reinforcement Learning-Driven QoS-Aware Intelligent Routing for Software-Defined Networks",
       authors: "M. B. Hossain, J. Wei",
       venue: "IEEE Global Conference on Signal and Information Processing (GlobalSIP)",
-      url: "https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ",
+      url: "https://ieeexplore.ieee.org/abstract/document/8969320",
       featured: false
     },
     {
@@ -242,7 +233,16 @@ window.PORTFOLIO_DATA = {
       title: "A New Approach of Image Encryption Using 3D Chaotic Map to Enhance Security of Multimedia Component",
       authors: "M. B. Hossain, M. T. Rahman, A. S. Rahman, S. Islam",
       venue: "International Conference on Informatics, Electronics & Vision (ICIEV)",
-      url: "https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ",
+      url: "https://ieeexplore.ieee.org/abstract/document/6850856",
+      featured: false
+    },
+    {
+      year: "2012",
+      type: "conference",
+      title: "Reconfigurable Encryption System: Encrypt Digital Data",
+      authors: "M. J. Hossain, M. B. Hossain, K. M. Morshed",
+      venue: "International Conference on Computer & Information Technology (ICCIT)",
+      url: "https://ieeexplore.ieee.org/abstract/document/6509805",
       featured: false
     }
   ],
