@@ -65,14 +65,14 @@
   // Render experience
   const experienceTimeline = document.getElementById("experience-timeline");
   experienceTimeline.innerHTML = data.experience.map((item) => `
-    <article class="timeline-item reveal">
+    <article class="timeline-item timeline-${item.type === "teaching" ? "teaching" : "research"} reveal">
       <div class="timeline-marker" aria-hidden="true"></div>
       <div class="timeline-period">${esc(item.period)}</div>
       <div class="timeline-content">
+        <span class="timeline-type">${item.type === "teaching" ? "Teaching" : "Research"}</span>
         <h3>${esc(item.role)}</h3>
         <p class="timeline-org">${esc(item.organization)}</p>
         <p class="timeline-location">${esc(item.location)}</p>
-        <ul>${item.points.map(point => `<li>${esc(point)}</li>`).join("")}</ul>
       </div>
     </article>
   `).join("");

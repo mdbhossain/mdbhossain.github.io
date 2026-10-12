@@ -133,9 +133,11 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
+  // type: "teaching" or "research" (sets the label and dot colour). "points" are kept for reference but not shown.
   experience: [
     {
       role: "Instructor of Record",
+      type: "teaching",
       organization: "Department of Electrical and Computer Engineering, The University of Alabama",
       location: "Tuscaloosa, Alabama",
       period: "May 2025 — Present",
@@ -147,6 +149,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       role: "Graduate Teaching Assistant",
+      type: "teaching",
       organization: "Department of Electrical and Computer Engineering, The University of Alabama",
       location: "Tuscaloosa, Alabama",
       period: "January 2025 — May 2025",
@@ -158,6 +161,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       role: "Graduate Research Assistant",
+      type: "research",
       organization: "Computer Laboratory of Ambient and Wearable Systems (CLAWS), The University of Alabama",
       location: "Tuscaloosa, Alabama",
       period: "August 2020 — January 2025",
@@ -169,6 +173,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       role: "Graduate Research Assistant",
+      type: "research",
       organization: "Cyber Physical Social System Design Lab, The University of Akron",
       location: "Akron, Ohio",
       period: "August 2018 — May 2019",
@@ -179,6 +184,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       role: "Lecturer",
+      type: "teaching",
       organization: "Department of Electrical and Electronic Engineering, Manarat International University",
       location: "Dhaka, Bangladesh",
       period: "January 2013 — August 2018",
