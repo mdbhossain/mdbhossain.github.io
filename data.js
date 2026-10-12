@@ -30,6 +30,11 @@ window.PORTFOLIO_DATA = {
       url: "https://doi.org/10.1109/MENACOMM69507.2026.11532882"
     },
     {
+      date: "Oct 2025",
+      text: "Attended IEEE-EMBS BHI 2025 in Atlanta, Georgia.",
+      url: "https://bhi.embs.org/2025/"
+    },
+    {
       date: "2025",
       text: "Paper at IEEE ICIP 2025 on detecting screen use during meals among preschool children.",
       url: "https://doi.org/10.1109/ICIP55913.2025.11084752"
@@ -287,6 +292,11 @@ window.PORTFOLIO_DATA = {
   ],
 
   service: [
+    {
+      title: "Journal Reviewer",
+      organization: "Scientific Reports",
+      period: "2026"
+    },
     {
       title: "Conference Reviewer",
       organization: "IEEE-EMBS International Conference on Biomedical and Health Informatics",
