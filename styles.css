@@ -316,14 +316,14 @@ img { max-width: 100%; }
 .expertise-strip span:last-child { border-right: 0; }
 
 .section { padding: 110px 0; }
-.section-after-hero { padding: 72px 0; }
-/* About uses the same two-column grid as the hero: 290px profile column + 48px gap + content column */
-.section-grid.section-grid-about { grid-template-columns: 290px minmax(0, 1fr); gap: 48px; }
-.section-grid-about .section-heading { margin-bottom: 0; }
-.section-grid-about .section-heading h2 { margin: 0; font-size: clamp(1.6rem, 2.3vw, 2rem); line-height: 1.15; letter-spacing: -.03em; }
-.section-grid-about .about-copy p { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.7; text-align: justify; hyphens: auto; }
-.section-grid-about .about-copy p:last-child { margin-bottom: 0; }
-.section-grid-about .about-copy .lead-copy { font-size: 1.08rem; }
+.section-compact { padding: 72px 0; }
+/* About and Publications use the same two-column grid as the hero: 290px profile column + 48px gap + content column */
+.section-grid.section-split { grid-template-columns: 290px minmax(0, 1fr); gap: 48px; }
+.section-split .section-heading { margin-bottom: 0; }
+.section-split .section-heading h2 { margin: 0; font-size: clamp(1.6rem, 2.3vw, 2rem); line-height: 1.15; letter-spacing: -.03em; }
+.section-split .about-copy p { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.7; text-align: justify; hyphens: auto; }
+.section-split .about-copy p:last-child { margin-bottom: 0; }
+.section-split .about-copy .lead-copy { font-size: 1.08rem; }
 .section-tinted { background: var(--surface-2); }
 .section-dark { background: var(--navy); color: #eef5ff; }
 .section-dark .section-kicker { color: #79a7ff; }
@@ -396,6 +396,14 @@ img { max-width: 100%; }
 .timeline-content li { margin-bottom: 5px; }
 
 .publication-toolbar { display: flex; gap: 8px; margin: -20px 0 28px; }
+.publications-body { min-width: 0; }
+.publication-intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.publication-intro .section-note { margin: 0; font-size: 1.02rem; line-height: 1.7; }
+.publication-intro .button { flex: none; white-space: nowrap; }
+.inline-link { color: var(--accent); font-weight: 700; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent); text-underline-offset: 3px; transition: text-decoration-color .2s ease; }
+.inline-link:hover { text-decoration-color: var(--accent); }
+.publications-body .publication-toolbar { margin: 18px 0 20px; }
+.publications-body .publication-item { grid-template-columns: 64px minmax(0, 1fr) 44px; gap: 18px; padding: 22px 4px; }
 .filter-button {
   border: 1px solid var(--line);
   color: var(--muted);
@@ -537,7 +545,7 @@ img { max-width: 100%; }
   .expertise-strip span:nth-child(3) { border-right: 0; }
   .expertise-strip span:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
   .section-grid, .teaching-layout { grid-template-columns: 1fr; gap: 34px; }
-  .section-grid.section-grid-about { grid-template-columns: 1fr; gap: 18px; }
+  .section-grid.section-split { grid-template-columns: 1fr; gap: 18px; }
   .education-grid, .research-grid { grid-template-columns: repeat(2, 1fr); }
   .service-skill-grid { grid-template-columns: 1fr; }
   .contact-shell { grid-template-columns: 1fr; gap: 32px; }
@@ -557,9 +565,11 @@ img { max-width: 100%; }
   .expertise-strip span:nth-child(2n) { border-right: 0; }
   .expertise-strip span:nth-last-child(-n+2) { border-bottom: 0; }
   .section { padding: 78px 0; }
-  .section.section-after-hero { padding-top: 40px; }
+  .section.section-compact { padding: 48px 0; }
+  .publication-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .publications-body .publication-item { grid-template-columns: 46px minmax(0, 1fr) 36px; gap: 12px; }
   /* Justified text leaves large gaps on narrow screens, so use left alignment on phones */
-  .hero-summary, .section-grid-about .about-copy p { text-align: left; }
+  .hero-summary, .section-split .about-copy p { text-align: left; }
   .section-heading-row { align-items: start; flex-direction: column; }
   .affiliation-row, .education-grid, .research-grid, .projects-grid { grid-template-columns: 1fr; }
   .project-panel { padding: 24px 18px; }
