@@ -291,6 +291,12 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
+  // Professional memberships, shown as one line under Scholarly service. "url" is optional.
+  memberships: [
+    { name: "IEEE", url: "https://www.ieee.org/" },
+    { name: "IEEE Engineering in Medicine and Biology Society (EMBS)", url: "https://www.embs.org/" }
+  ],
+
   service: [
     {
       title: "Journal Reviewer",

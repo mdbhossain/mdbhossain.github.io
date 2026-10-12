@@ -175,6 +175,15 @@
     </div>
   `).join("");
 
+  // Memberships
+  const memberships = document.getElementById("memberships");
+  if (memberships) {
+    const items = (data.memberships || []).map(m => m.url
+      ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Member, ${esc(m.name)}</a>`
+      : `<span>Member, ${esc(m.name)}</span>`);
+    memberships.innerHTML = items.length ? `<span class="memberships-label">Memberships</span>${items.join('<span class="memberships-sep" aria-hidden="true">·</span>')}` : "";
+  }
+
   // Skills
   const skillGroups = document.getElementById("skill-groups");
   if (skillGroups) skillGroups.innerHTML = data.skills.map(group => `
