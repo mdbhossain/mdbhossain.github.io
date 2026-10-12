@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
-  <link rel="stylesheet" href="styles.css?v=20261012e" />
+  <link rel="stylesheet" href="styles.css?v=20261012f" />
   <title>Md Billal Hossain | Researcher & Educator</title>
 
   <script type="application/ld+json">
@@ -181,25 +181,24 @@
     </section>
 
     <section class="section section-compact section-tinted" id="publications">
-      <div class="container section-grid section-split">
-        <div class="section-heading reveal">
-          <h2>Selected scholarly work.</h2>
-        </div>
+      <div class="container">
+        <div class="section-grid section-split">
+          <div class="section-heading reveal">
+            <h2>Selected scholarly work.</h2>
+          </div>
 
-        <div class="publications-body">
           <div class="publication-intro reveal">
-            <p class="section-note">A concise selection is shown here. Use <a class="inline-link" href="https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ" target="_blank" rel="noopener">Google Scholar</a> for the full, current publication list.</p>
+            <div class="publication-toolbar" role="group" aria-label="Filter publications">
+              <button class="filter-button is-active" data-filter="all" type="button">All</button>
+              <button class="filter-button" data-filter="journal" type="button">Journal</button>
+              <button class="filter-button" data-filter="conference" type="button">Conference</button>
+            </div>
             <a class="button button-secondary button-small" href="https://scholar.google.de/citations?hl=en&user=O0B7BRsAAAAJ" target="_blank" rel="noopener">View Google Scholar <span aria-hidden="true">↗</span></a>
           </div>
-
-          <div class="publication-toolbar reveal" role="group" aria-label="Filter publications">
-            <button class="filter-button is-active" data-filter="all" type="button">All</button>
-            <button class="filter-button" data-filter="journal" type="button">Journal</button>
-            <button class="filter-button" data-filter="conference" type="button">Conference</button>
-          </div>
-
-          <div class="publication-list" id="publication-list"></div>
         </div>
+
+        <!-- Full container width so titles wrap less -->
+        <div class="publication-list" id="publication-list"></div>
       </div>
     </section>
 
@@ -287,7 +286,7 @@
 
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
 
-  <script src="data.js?v=20261012e"></script>
-  <script src="script.js?v=20261012e"></script>
+  <script src="data.js?v=20261012f"></script>
+  <script src="script.js?v=20261012f"></script>
 </body>
 </html>

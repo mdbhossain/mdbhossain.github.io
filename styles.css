@@ -397,14 +397,15 @@ img { max-width: 100%; }
 .timeline-content li { margin-bottom: 5px; }
 
 .publication-toolbar { display: flex; gap: 8px; margin: -20px 0 28px; }
-.publications-body { min-width: 0; }
-.publication-intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.publication-intro .section-note { margin: 0; font-size: 1.02rem; line-height: 1.7; }
+.publication-intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-width: 0; }
+.publication-intro .publication-toolbar { margin: 0; flex-wrap: wrap; }
 .publication-intro .button { flex: none; white-space: nowrap; }
+#publications .section-split { align-items: center; }
+#publications .publication-list { margin-top: 28px; }
 .inline-link { color: var(--accent); font-weight: 700; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent); text-underline-offset: 3px; transition: text-decoration-color .2s ease; }
 .inline-link:hover { text-decoration-color: var(--accent); }
-.publications-body .publication-toolbar { margin: 18px 0 20px; }
-.publications-body .publication-item { grid-template-columns: 64px minmax(0, 1fr) 44px; gap: 18px; padding: 22px 4px; }
+#publications .publication-item { padding: 20px 4px; }
+#publications .publication-body h3 { max-width: none; }
 .filter-button {
   border: 1px solid var(--line);
   color: var(--muted);
@@ -600,7 +601,7 @@ a.news-text:hover { color: var(--accent); }
   .section { padding: 78px 0; }
   .section.section-compact { padding: 48px 0; }
   .publication-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .publications-body .publication-item { grid-template-columns: 46px minmax(0, 1fr) 36px; gap: 12px; }
+  #publications .publication-item { grid-template-columns: 46px minmax(0, 1fr) 36px; gap: 12px; }
   /* Justified text leaves large gaps on narrow screens, so use left alignment on phones */
   .hero-summary, .section-split .about-copy p { text-align: left; }
   .section-heading-row { align-items: start; flex-direction: column; }
