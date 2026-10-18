@@ -254,7 +254,7 @@ img { max-width: 100%; }
 .hero-block-title { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font: 800 1.35rem/1.2 "Manrope", "Inter", sans-serif; letter-spacing: -.02em; }
 .hero-block-icon { width: 36px; height: 36px; display: grid; place-items: center; flex: none; border-radius: 11px; background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
 .hero-block-icon svg { width: 20px; height: 20px; fill: var(--accent); }
-.hero-summary { text-align: justify; hyphens: auto; margin: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.7; }
+.hero-summary { text-align: justify; hyphens: auto; margin: 0; color: var(--muted); font-size: 1.1rem; line-height: 1.7; }
 
 /* Research Interests sits in the profile column, under the social icons */
 .profile-card .keyword-panel { width: 100%; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
@@ -388,8 +388,8 @@ img { max-width: 100%; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
 .tag-row span { padding: 5px 8px; border-radius: 999px; background: rgba(255,255,255,.07); color: #d6e4f7; font-size: .7rem; }
 
-.experience-totals { display: grid; gap: 6px; margin: 14px 0 0; font-size: .86rem; color: var(--muted); }
-.experience-totals b { display: inline-block; min-width: 74px; font-weight: 800; }
+.experience-totals { display: grid; gap: 8px; margin: 16px 0 0; font-size: 1.05rem; color: var(--muted); }
+.experience-totals b { display: inline-block; min-width: 92px; font-weight: 800; }
 .total-teaching b { color: var(--crimson); }
 .total-research b { color: var(--accent); }
 
@@ -515,6 +515,7 @@ img { max-width: 100%; }
 .contact-line > span:first-child { color: var(--ink); margin-right: 4px; }
 .contact-line .copy-email { padding: 2px 9px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: .74rem; font-weight: 700; cursor: pointer; }
 .contact-line .copy-email:hover { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
+.contact-line .contact-email { color: var(--ink); font-weight: 600; }
 .contact-line .copy-status { color: var(--accent-2); font-size: .82rem; font-weight: 700; }
 .contact-shell {
   display: grid;
@@ -573,7 +574,7 @@ img { max-width: 100%; }
 /* About inside the hero: heading floats top-left, text wraps beside and below it */
 .hero-about { display: flow-root; margin-top: 6px; }
 .hero-about-title { float: left; width: 230px; margin: 4px 28px 10px 0; font: 800 1.6rem/1.15 "Manrope", "Inter", sans-serif; letter-spacing: -.035em; }
-.hero-about p { margin: 0 0 14px; color: var(--muted); font-size: 1.02rem; line-height: 1.7; text-align: justify; hyphens: auto; }
+.hero-about p { margin: 0 0 14px; color: var(--muted); font-size: 1.1rem; line-height: 1.7; text-align: justify; hyphens: auto; }
 .hero-about p:last-child { margin-bottom: 0; }
 
 /* News */

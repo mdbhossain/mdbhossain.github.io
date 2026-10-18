@@ -311,7 +311,7 @@ window.PORTFOLIO_DATA = {
     {
       title: "Conference Reviewer",
       organization: "IEEE-EMBS International Conference on Biomedical and Health Informatics",
-      period: "2026"
+      period: "2024 — 2026"
     },
     {
       title: "Conference Reviewer",
