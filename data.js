@@ -30,6 +30,10 @@ window.PORTFOLIO_DATA = {
       url: "https://doi.org/10.1109/MENACOMM69507.2026.11532882"
     },
     {
+      date: "May 2026",
+      text: "Started as Instructor of Record for Microcomputers at The University of Alabama."
+    },
+    {
       date: "Oct 2025",
       text: "Attended IEEE-EMBS BHI 2025 in Atlanta, Georgia.",
       url: "https://bhi.embs.org/2025/"
@@ -38,10 +42,6 @@ window.PORTFOLIO_DATA = {
       date: "2025",
       text: "Paper at IEEE ICIP 2025 on detecting screen use during meals among preschool children.",
       url: "https://doi.org/10.1109/ICIP55913.2025.11084752"
-    },
-    {
-      date: "May 2025",
-      text: "Started as Instructor of Record for Microcomputers at The University of Alabama."
     }
   ],
 
@@ -141,6 +141,7 @@ window.PORTFOLIO_DATA = {
   // Experience timeline (newest first).
   // type: "teaching" or "research" sets the label and dot colour.
   // start / end: "YYYY-MM" (end can be "present"); dates and durations are calculated from these.
+  // countUntil (optional): for a "present" role, the month the duration is counted to (e.g. end of the current term).
   // Consecutive roles at the same institution are grouped under one heading.
   // courses: shown as chips beside the role. mentees: optional "Student mentoring" list under the role.
   // "points" are kept for reference but not shown.
@@ -151,8 +152,9 @@ window.PORTFOLIO_DATA = {
       unit: "Dept. of Electrical & Computer Engineering",
       institution: "The University of Alabama",
       place: "Tuscaloosa, AL",
-      start: "2025-05",
+      start: "2026-05",
       end: "present",
+      countUntil: "2026-12", // current role: shown as "Present", duration counted through the end of Fall 2026
       courses: ["Microcomputers"],
       points: [
         "Conduct teaching in Microcomputers.",
