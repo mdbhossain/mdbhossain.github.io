@@ -89,7 +89,7 @@
   data.experience.forEach((item) => {
     const kind = item.type === "teaching" ? "teaching" : "research";
     const start = parseYM(item.start), end = parseYM(item.end);
-    const months = monthsBetween(start, end);
+    const months = monthsBetween(start, item.countUntil ? parseYM(item.countUntil) : end);
     totals[kind] += months;
     let group = roleGroups.find(g => g.role === item.role);
     if (!group) { group = { role: item.role, kind, months: 0, positions: [] }; roleGroups.push(group); }
