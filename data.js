@@ -191,6 +191,17 @@ window.PORTFOLIO_DATA = {
       ]
     },
     {
+      role: "Graduate Teaching Assistant",
+      type: "teaching",
+      unit: "Dept. of Electrical & Computer Engineering",
+      institution: "The University of Akron",
+      place: "Akron, OH",
+      start: "2019-08",
+      end: "2020-05",
+      courses: ["Digital Logic Design", "Circuits I Laboratory"],
+      points: []
+    },
+    {
       role: "Graduate Research Assistant",
       type: "research",
       unit: "Cyber Physical Social System Design Lab",

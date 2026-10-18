@@ -411,7 +411,8 @@ img { max-width: 100%; }
 .timeline-item.timeline-teaching { --type-color: var(--crimson); }
 .timeline-marker { position: absolute; left: 149px; top: 5px; width: 13px; height: 13px; border-radius: 50%; background: var(--bg); border: 3px solid var(--type-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--type-color) 12%, transparent); }
 .timeline-period { padding-top: 1px; color: var(--muted); font-size: .8rem; font-weight: 700; text-align: right; white-space: nowrap; }
-.timeline-content { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: start; }
+.timeline-content { min-width: 0; }
+.timeline-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .timeline-content h3 { margin: 0 0 2px; font-size: 1rem; line-height: 1.35; }
 .timeline-type {
   display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; vertical-align: 2px;
@@ -419,18 +420,19 @@ img { max-width: 100%; }
   color: var(--type-color); font-size: .6rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
 }
 .timeline-org { margin: 0; color: var(--muted); font-size: .88rem; }
-.timeline-side { display: grid; justify-items: end; gap: 6px; max-width: 340px; text-align: right; }
-.timeline-duration { color: var(--ink); font-size: .8rem; font-weight: 700; white-space: nowrap; }
-.timeline-courses { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
-.timeline-mentees { margin-top: 10px; }
-.timeline-mentees-label { display: block; margin-bottom: 4px; color: var(--type-color); font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.timeline-mentees ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
-.timeline-mentees li { font-size: .86rem; line-height: 1.45; }
-.timeline-mentees li span { color: var(--muted); }
+.timeline-duration { flex: none; color: var(--ink); font-size: .8rem; font-weight: 700; white-space: nowrap; }
+/* courses and mentoring: label column + content column, aligned for every role */
+.timeline-detail { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 12px; align-items: start; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.timeline-detail-label { padding-top: 3px; color: var(--type-color); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.timeline-courses { display: flex; flex-wrap: wrap; gap: 6px; }
 .timeline-courses span {
-  padding: 3px 9px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--type-color) 30%, var(--line));
-  background: var(--surface); color: var(--ink); font-size: .72rem; font-weight: 600; line-height: 1.4; white-space: nowrap;
+  padding: 3px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--type-color) 30%, var(--line));
+  background: var(--surface); color: var(--ink); font-size: .74rem; font-weight: 600; line-height: 1.45; white-space: nowrap;
 }
+.timeline-mentees { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.timeline-mentees li { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; font-size: .86rem; line-height: 1.45; }
+.timeline-mentees li strong { color: var(--ink); }
+.timeline-mentees li span { color: var(--muted); }
 
 .publication-toolbar { display: flex; gap: 8px; margin: -20px 0 28px; }
 .publication-intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-width: 0; }
@@ -681,10 +683,10 @@ a.news-text:hover { color: var(--accent); }
   .timeline-item { grid-template-columns: 1fr; gap: 4px; padding-left: 34px; padding-bottom: 16px; }
   .timeline-marker { left: 0; top: 4px; }
   .timeline-period { text-align: left; }
-  .timeline-content { grid-template-columns: 1fr; gap: 6px; }
-  .timeline-side { justify-items: start; max-width: none; text-align: left; }
+  .timeline-head { flex-wrap: wrap; gap: 2px 12px; }
+  .timeline-detail { grid-template-columns: 1fr; gap: 6px; }
   .timeline-courses span { white-space: normal; }
-  .timeline-courses { justify-content: flex-start; }
+  .timeline-mentees li { grid-template-columns: 1fr; gap: 0; }
   .publication-item { grid-template-columns: 58px 1fr 38px; gap: 13px; }
   .publication-body h3 { font-size: .94rem; }
   .service-item { grid-template-columns: 1fr; gap: 4px; }

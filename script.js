@@ -97,24 +97,29 @@
     const months = monthsBetween(start, end);
     totals[kind] += months;
     const courses = (item.courses || []).map(c => `<span>${esc(c)}</span>`).join("");
+    const mentees = (item.mentees || []).map(m => `
+              <li><strong>${esc(m.name)}</strong><span>${esc(m.position || "")}</span></li>`).join("");
     return `
     <article class="timeline-item timeline-${kind}">
       <div class="timeline-marker" aria-hidden="true"></div>
       <div class="timeline-period">${formatYM(start)} – ${formatYM(end)}</div>
       <div class="timeline-content">
-        <div class="timeline-main">
+        <div class="timeline-head">
           <h3>${esc(item.role)} <span class="timeline-type">${kind === "teaching" ? "Teaching" : "Research"}</span></h3>
-          <p class="timeline-org">${esc(item.unit)}</p>
-          ${(item.mentees || []).length ? `
-          <div class="timeline-mentees">
-            <span class="timeline-mentees-label">Student mentoring</span>
-            <ul>${item.mentees.map(m => `<li><strong>${esc(m.name)}</strong>${m.position ? ` <span>· ${esc(m.position)}</span>` : ""}</li>`).join("")}</ul>
-          </div>` : ""}
-        </div>
-        <div class="timeline-side">
           <span class="timeline-duration">${formatDuration(months)}</span>
-          ${courses ? `<div class="timeline-courses" aria-label="Courses">${courses}</div>` : ""}
         </div>
+        <p class="timeline-org">${esc(item.unit)}</p>
+        ${courses ? `
+        <div class="timeline-detail">
+          <span class="timeline-detail-label">Courses</span>
+          <div class="timeline-courses">${courses}</div>
+        </div>` : ""}
+        ${mentees ? `
+        <div class="timeline-detail">
+          <span class="timeline-detail-label">Student mentoring</span>
+          <ul class="timeline-mentees">${mentees}
+          </ul>
+        </div>` : ""}
       </div>
     </article>`;
   };
