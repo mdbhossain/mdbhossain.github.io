@@ -249,14 +249,16 @@ img { max-width: 100%; }
 .social-link:hover { transform: translateY(-2px); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
 
 /* Summary, keywords, education */
-.hero-main { display: grid; gap: 18px; min-width: 0; align-content: space-between; }
-.hero-top { display: grid; grid-template-columns: minmax(0, 1fr) 318px; gap: 30px; align-items: start; }
+.hero-main { display: grid; gap: 26px; min-width: 0; align-content: start; }
+.hero-top { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; align-items: start; }
 .hero-block-title { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font: 800 1.35rem/1.2 "Manrope", "Inter", sans-serif; letter-spacing: -.02em; }
 .hero-block-icon { width: 36px; height: 36px; display: grid; place-items: center; flex: none; border-radius: 11px; background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
 .hero-block-icon svg { width: 20px; height: 20px; fill: var(--accent); }
 .hero-summary { text-align: justify; hyphens: auto; margin: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.7; }
 
-.keyword-panel { padding-left: 24px; border-left: 1px solid var(--line); }
+/* Research Interests sits in the profile column, under the social icons */
+.profile-card .keyword-panel { width: 100%; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.profile-card .keyword-list { justify-content: center; }
 .keyword-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .keyword-list li {
   --glow: 47, 114, 255;
@@ -651,7 +653,6 @@ a.news-text:hover { color: var(--accent); }
   .brand-text { display: none; }
   .hero { padding-top: 104px; }
   .hero-top { grid-template-columns: 1fr; gap: 26px; }
-  .keyword-panel { padding-left: 0; border-left: 0; }
   #education .education-card { grid-template-columns: 58px minmax(0, 1fr); row-gap: 2px; padding: 10px 14px 10px 10px; }
   #education .education-card p { grid-column: 2; text-align: left; }
   .expertise-strip { grid-template-columns: repeat(2, 1fr); margin-top: 48px; }

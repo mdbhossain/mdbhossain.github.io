@@ -152,7 +152,7 @@
     `).join("");
     setupRevealObservers();
   };
-  renderPublications();
+  renderPublications("journal"); // journal papers are shown by default
 
   document.querySelectorAll(".filter-button").forEach(button => {
     button.addEventListener("click", () => {
