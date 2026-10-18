@@ -82,53 +82,70 @@
   };
   const formatYM = (d) => d.present ? "Present" : `${MONTHS[d.m - 1]} ${d.y}`;
 
-  const experienceTimeline = document.getElementById("experience-timeline");
+  // Experience: one collapsible card per role (positions with the same title are combined)
+  const experienceList = document.getElementById("experience-timeline");
   const totals = { teaching: 0, research: 0 };
-  // Group consecutive roles at the same institution into one card
-  const experienceGroups = [];
+  const roleGroups = [];
   data.experience.forEach((item) => {
-    const last = experienceGroups[experienceGroups.length - 1];
-    if (last && last.institution === item.institution) last.items.push(item);
-    else experienceGroups.push({ institution: item.institution, place: item.place, items: [item] });
-  });
-  const renderRole = (item) => {
     const kind = item.type === "teaching" ? "teaching" : "research";
     const start = parseYM(item.start), end = parseYM(item.end);
     const months = monthsBetween(start, end);
     totals[kind] += months;
-    const courses = (item.courses || []).map(c => `<span>${esc(c)}</span>`).join("");
-    const mentees = (item.mentees || []).map(m => `
-              <li><strong>${esc(m.name)}</strong><span>${esc(m.position || "")}</span></li>`).join("");
+    let group = roleGroups.find(g => g.role === item.role);
+    if (!group) { group = { role: item.role, kind, months: 0, positions: [] }; roleGroups.push(group); }
+    group.months += months;
+    group.positions.push({ ...item, startYM: start, endYM: end, months });
+  });
+
+  const renderPosition = (p) => {
+    const courses = (p.courses || []).map(c => `<span>${esc(c)}</span>`).join("");
+    const mentees = (p.mentees || []).map(m => `
+            <li><strong>${esc(m.name)}</strong><span>${esc(m.position || "")}</span></li>`).join("");
     return `
-    <article class="timeline-item timeline-${kind}">
-      <div class="timeline-marker" aria-hidden="true"></div>
-      <div class="timeline-period">${formatYM(start)} – ${formatYM(end)}</div>
-      <div class="timeline-content">
-        <div class="timeline-head">
-          <h3>${esc(item.role)} <span class="timeline-type">${kind === "teaching" ? "Teaching" : "Research"}</span></h3>
-          <span class="timeline-duration">${formatDuration(months)}</span>
+      <div class="role-position">
+        <div class="role-when">
+          <span>${formatYM(p.startYM)} – ${formatYM(p.endYM)}</span>
+          <small>${formatDuration(p.months)}</small>
         </div>
-        <p class="timeline-org">${esc(item.unit)}</p>
-        ${courses ? `
-        <div class="timeline-detail">
-          <span class="timeline-detail-label">Courses</span>
-          <div class="timeline-courses">${courses}</div>
-        </div>` : ""}
-        ${mentees ? `
-        <div class="timeline-detail">
-          <span class="timeline-detail-label">Student mentoring</span>
-          <ul class="timeline-mentees">${mentees}
-          </ul>
-        </div>` : ""}
-      </div>
-    </article>`;
+        <div class="role-where">
+          <p class="role-inst"><strong>${esc(p.institution)}</strong><span>${esc(p.place || "")}</span></p>
+          <p class="timeline-org">${esc(p.unit)}</p>
+          ${courses ? `
+          <div class="timeline-detail">
+            <span class="timeline-detail-label">Courses</span>
+            <div class="timeline-courses">${courses}</div>
+          </div>` : ""}
+          ${mentees ? `
+          <div class="timeline-detail">
+            <span class="timeline-detail-label">Student mentoring</span>
+            <ul class="timeline-mentees">${mentees}
+            </ul>
+          </div>` : ""}
+        </div>
+      </div>`;
   };
-  experienceTimeline.innerHTML = experienceGroups.map(group => `
-    <div class="timeline-group reveal">
-      <div class="timeline-inst"><strong>${esc(group.institution)}</strong><span>${esc(group.place || "")}</span></div>
-      ${group.items.map(renderRole).join("")}
-    </div>
-  `).join("");
+
+  experienceList.innerHTML = roleGroups.map(g => {
+    const institutions = [...new Set(g.positions.map(p => p.institution))].join(" · ");
+    const firstYear = Math.min(...g.positions.map(p => p.startYM.y));
+    const lastEnd = g.positions.some(p => p.endYM.present) ? "Present" : Math.max(...g.positions.map(p => p.endYM.y));
+    const span = firstYear === lastEnd ? `${firstYear}` : `${firstYear} – ${lastEnd}`;
+    return `
+    <details class="role-card role-${g.kind} reveal">
+      <summary>
+        <span class="role-title">
+          <strong>${esc(g.role)}</strong>
+          <span class="timeline-type">${g.kind === "teaching" ? "Teaching" : "Research"}</span>
+        </span>
+        <span class="role-duration">${formatDuration(g.months)}</span>
+        <span class="role-chevron" aria-hidden="true"></span>
+        <span class="role-meta">${esc(institutions)} · ${span}</span>
+      </summary>
+      <div class="role-body">${g.positions.map(renderPosition).join("")}
+      </div>
+    </details>`;
+  }).join("");
+
   const experienceTotals = document.getElementById("experience-totals");
   if (experienceTotals) {
     experienceTotals.innerHTML = `
