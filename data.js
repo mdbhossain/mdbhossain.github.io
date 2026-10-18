@@ -215,7 +215,9 @@ window.PORTFOLIO_DATA = {
       courses: ["Microprocessor & Interfacing", "Digital Signal Processing", "Computer Networks", "Digital Electronics", "Digital Communication", "Computer Programming"],
       // Student mentoring: undergraduate final-year thesis students (name and current position)
       mentees: [
-        { name: "Imran Khan Tutul", position: "MSEE · Power Systems Protection and Control Engineer" }
+        { name: "Imran Khan Tutul", position: "MSEE · Power Systems Protection and Control Engineer, Maine, USA" },
+        { name: "Yead Ahmed", position: "Manager, Exabyte Ltd, Bangladesh" },
+        { name: "Md. Abul Kalam Azad", position: "Senior Engineer, Grid Automation, Reverie Power & Automation Engineering Ltd., Bangladesh" }
       ],
       points: [
         "Prepared and delivered lectures, developed course materials, and assessed student learning.",
